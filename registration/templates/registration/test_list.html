@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+<style>
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f7fb;
+        color: #333;
+    }
+
+
+    /* =========================
+       MAIN CONTAINER
+    ========================== */
+
+    .main {
+        min-height: 100vh;
+        padding: 35px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: auto;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* =========================
+       HEADINGS
+    ========================== */
+
+    h2 {
+        margin: 0 -25px 25px -25px;
+        padding: 18px 25px;
+        background: linear-gradient(135deg, #1f6f8b, #2fa4dc);
+        color: white;
+        font-size: 22px;
+        font-weight: 600;
+        text-align: left;
+        border-radius: 14px 14px 0 0;
+    }
+
+
+    /* =========================
+       FORM
+    ========================== */
+
+    form {
+        width: 100%;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        align-items: end;
+    }
+
+    .row > div {
+        width: 100%;
+    }
+
+
+    /* =========================
+       LABEL
+    ========================== */
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #374151;
+    }
+
+
+    /* =========================
+       INPUT & SELECT
+    ========================== */
+
+    input,
+    select {
+        width: 100%;
+        height: 43px;
+        padding: 10px 13px;
+        margin: 0;
+        border: 1px solid #d5dbe3;
+        border-radius: 7px;
+        background: #ffffff;
+        color: #333;
+        font-size: 14px;
+        outline: none;
+        transition: 0.2s ease;
+    }
+
+    input:hover,
+    select:hover {
+        border-color: #9ca3af;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #2fa4dc;
+        box-shadow: 0 0 0 3px rgba(47, 164, 220, 0.15);
+    }
+
+    input::placeholder {
+        color: #9ca3af;
+    }
+
+    select {
+        cursor: pointer;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    button {
+        width: 100%;
+        height: 43px;
+        padding: 0 18px;
+        margin: 0;
+        background: linear-gradient(135deg, #1a7fae, #c25a1f);
+        color: white;
+        border: none;
+        border-radius: 7px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(31, 111, 139, 0.25);
+    }
+
+    button:active {
+        transform: translateY(0);
+    }
+
+
+    /* =========================
+       TABLE
+    ========================== */
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    /* Table Header */
+
+    table th {
+        background: #263b4a;
+        color: #ffffff;
+        padding: 13px 12px;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid #263b4a;
+    }
+
+
+    /* Table Data */
+
+    table td {
+        padding: 12px;
+        border: 1px solid #e1e5ea;
+        color: #374151;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+
+    /* Alternate Rows */
+
+    table tbody tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+
+    /* Hover */
+
+    table tbody tr:hover {
+        background-color: #eaf5fb;
+        transition: 0.2s ease;
+    }
+
+
+    /* =========================
+       EDIT BUTTON
+    ========================== */
+
+    .btn-edit {
+        display: inline-block;
+        padding: 6px 12px;
+        background: #18a865;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        transition: 0.2s ease;
+    }
+
+    .btn-edit:hover {
+        background: #146c43;
+    }
+
+
+    /* =========================
+       BOOTSTRAP-LIKE BUTTONS
+       (Your HTML uses these classes)
+    ========================== */
+
+    .btn {
+        margin:10px;
+        display: inline-block;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+    .btn-sm {
+        padding: 6px 12px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+
+    .btn-info {
+        padding:6px 12px;
+        background: #10a948;
+        color: #ffffff;
+    }
+
+    .btn-info:hover {
+        background: #139145;
+    }
+
+    .btn-danger {
+        background: #dc3545;
+        color: #ffffff;
+    }
+
+    .btn-danger:hover {
+        background: #bb2d3b;
+    }
+
+
+    /* =========================
+       DELETE FORM
+    ========================== */
+
+    td form {
+        display: inline;
+    }
+
+    td form button {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 6px 12px;
+        font-size: 13px;
+        border-radius: 5px;
+        background: #dc3545;
+    }
+
+    td form button:hover {
+        background: #bb2d3b;
+        transform: none;
+        box-shadow: none;
+    }
+
+
+    /* =========================
+       MOBILE TABLE
+    ========================== */
+
+    @media (max-width: 1000px) {
+
+        .row {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .container {
+            overflow-x: auto;
+        }
+
+        table {
+            min-width: 900px;
+        }
+    }
+
+
+    /* =========================
+       MOBILE FORM
+    ========================== */
+
+    @media (max-width: 600px) {
+
+        .main {
+            padding: 15px;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin: 0 -20px 20px -20px;
+            padding: 16px 20px;
+            font-size: 19px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .row {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        input,
+        select,
+        button {
+            height: 42px;
+        }
+        
+    }
+</style>
+
+</head>
+    
+<body><div class="main">
+    <div class="container">
+        <h2>Registration Form</h2>
+                <form action="{% url 'insert_registration_item' %}" method="post" autocomplete="off">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div>
+                            <label>First name</label>
+                            <input type="text" name="firstname" placehoder="firstname" required>
+                        </div>
+
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" placeholder="Last Name" required>
+                        </div>
+                        <div>
+                    <label>Email Address</label>
+                    <input type="email" name="emailaddress" placeholder="Email Address" required>
+</div>
+                        <div>
+                    <label>Phone</label>
+                    <input type="tel" name="phone" placeholder="Phone" maxlength="10"
+                           pattern="[0-9]{10}" title="Enter 10 digit mobile number" required>
+                        </div>
+
+                        <div>
+                            <label>City</label>
+                            <select name="city">
+                                <option>Delhi</option>
+                                <option>Mumbai</option>
+                                <option>London</option>
+                                <option>Gujrat</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Country</label>
+                            <select name="country">
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>England</option>
+                            </select>
+                        </div>
+<div>
+    <button type="submit">Save</button>
+</div>
+                    </div>
+                    
+                </form>
+                <br>
+  <h2>Registered Users</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for registration in registration_list %}
+        <tr>
+            <td>{{ registration.Firstname }}</td>
+            <td>{{ registration.Lastname }}</td>
+            <td>{{ registration.EmailAddress }}</td>
+            <td>{{ registration.Phone }}</td>
+            <td>{{ registration.City }}</td>
+            <td>{{ registration.Country }}</td>
+            <td><a href="{% url 'edit_registration_item' registration.id %}" class="btn btn-sm btn-info">Edit</a>
+                    <form action="{% url 'delete_registration_item' registration.id %}" method="post">
+                   {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+    </div>
+</div>
+
+    <script>
+        function validateForm(){
+            let fname=document.getElementById("fname").value;
+            let lname=document.getElementById("lname").value;
+            let email=document.getElementById("email").value;
+            let phone=document.getElementById("phone").value;
+            if(fname==""){
+                alert("First Name required");
+                return false;
+            }
+            if(lname==""){
+                alert("Last Name required");
+                return false;
+            }
+            if(email==""){
+                alert("Email required");
+                return false;
+            }
+            if(phone.length !=10){
+                alert("Enter 10 digit phone number");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
