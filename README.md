@@ -19,8 +19,8 @@ A simple Registration Management System built using Python and Django.
 - PostgreSql
 
 ## Screenshot
+<img width="1918" height="972" alt="image" src="https://github.com/user-attachments/assets/9ac04ab1-3e5f-4c75-abaf-4f44589b81ec" />
 
-<img width="1920" height="1020" alt="djangos" src="https://github.com/user-attachments/assets/41f298d1-9830-4e49-957c-e592a8b8073b" />
 
 
 
