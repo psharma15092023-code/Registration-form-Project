@@ -20,7 +20,8 @@ A simple Registration Management System built using Python and Django.
 
 ## Screenshot
 
-<img width="1920" height="1020" alt="django" src="https://github.com/user-attachments/assets/97a71470-5029-4d5c-9045-e0a9284f8a0f" />
+<img width="1920" height="1020" alt="djangos" src="https://github.com/user-attachments/assets/41f298d1-9830-4e49-957c-e592a8b8073b" />
+
 
 
 ## How to Run
